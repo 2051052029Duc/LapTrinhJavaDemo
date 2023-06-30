@@ -8,6 +8,7 @@ package com.lmd.hibernatedemov1;
 
 import com.lmd.pojo.Category;
 import com.lmd.repository.ProductRepository;
+import com.lmd.repository.StatsRepository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,13 +23,7 @@ public class HibernateDemoV1 {
 
     public static void main(String[] args) {
         
-        Map<String, String> params = new HashMap<>();
-        params.put("kw", "Galaxy");
-        
-        ProductRepository pr = new ProductRepository();
-        
-        pr.getProducts(params).forEach(q -> {
-            System.out.printf("%d - %s\n", q.getId(), q.getName());
-        });
+        StatsRepository s = new StatsRepository();
+        s.statsRevenue(null).forEach(o -> System.out.printf("%d - %s - %d\n", o[0], o[1], o[2]));
     }
 }

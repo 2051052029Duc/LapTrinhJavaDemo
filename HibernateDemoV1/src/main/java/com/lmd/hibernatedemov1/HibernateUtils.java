@@ -5,8 +5,12 @@
 package com.lmd.hibernatedemov1;
 
 import com.lmd.pojo.Category;
+import com.lmd.pojo.OrderDetail;
+import com.lmd.pojo.ProdTag;
 import com.lmd.pojo.Product;
-import com.lmd.pojo.Tags;
+import com.lmd.pojo.SaleOrder;
+import com.lmd.pojo.Tag;
+import com.lmd.pojo.User;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -36,9 +40,16 @@ public class HibernateUtils {
         
         
         conf.setProperties(props);
+        
         conf.addAnnotatedClass(Category.class);        
         conf.addAnnotatedClass(Product.class);
-        conf.addAnnotatedClass(Tags.class);
+        conf.addAnnotatedClass(Tag.class);
+        
+        conf.addAnnotatedClass(User.class);        
+        conf.addAnnotatedClass(Tag.class);
+        conf.addAnnotatedClass(ProdTag.class);
+        conf.addAnnotatedClass(SaleOrder.class);
+        conf.addAnnotatedClass(OrderDetail.class);
 
         
  
